@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?import com.gluonhq.charm.glisten.control.Avatar?>-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="460.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lib.ui.login.MainController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <bottom>
+            <HBox prefHeight="75.0" prefWidth="700.0" spacing="5.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="75.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../static/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="40.0" prefWidth="79.0" text="LMS" />
+               </children>
+            </HBox>
+         </bottom>
+         <left>
+            <VBox prefHeight="290.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="45.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../static/user.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="Name  ID" />
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="147.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="42.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../static/lock.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Book" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="147.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="42.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../static/lock.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Bill" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="147.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="42.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../static/lock.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="smth" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="147.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="42.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../static/lock.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="smth" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="TITLE" />
+                <TableColumn prefWidth="75.0" text="SUBJECT" />
+                  <TableColumn prefWidth="75.0" text="AUTHOR" />
+                  <TableColumn prefWidth="75.0" text="ISBN" />
+                  <TableColumn prefWidth="75.0" text="B DATE" />
+                  <TableColumn prefWidth="75.0" text="D DATE" />
+                  <TableColumn prefWidth="75.0" text="STATUS" />
+              </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

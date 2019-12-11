@@ -2,5 +2,5 @@ module LMSProject {
     requires javafx.fxml;
     requires javafx.controls;
 
-    opens com.login;
+    opens com.lib.ui.login;
 }
