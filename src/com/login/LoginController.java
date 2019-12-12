@@ -1,4 +1,4 @@
-package com.lib.ui.login;
+package com.login;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,7 +36,7 @@ public class LoginController {
     }
     private void openMain() {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("mainUI.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/com/main/mainUI.fxml"));
             Stage stage = new Stage(StageStyle.DECORATED);
             stage.setTitle("LMS");
             stage.setScene(new Scene(parent));
