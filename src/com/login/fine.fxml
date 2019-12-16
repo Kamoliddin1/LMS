@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<TableView xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <columns>
+      <TableColumn prefWidth="75.0" text="FINE" />
+      <TableColumn prefWidth="75.0" text="FINE" />
+      <TableColumn prefWidth="75.0" text="AUTHOR" />
+      <TableColumn prefWidth="75.0" text="ISBN" />
+      <TableColumn prefWidth="75.0" text="B DATE" />
+      <TableColumn prefWidth="75.0" text="D DATE" />
+      <TableColumn prefWidth="75.0" text="STATUS" />
+   </columns>
+</TableView>
