@@ -24,7 +24,7 @@ public class LoginController {
 
         String uname = username.getText();
         String pword = password.getText();
-        if (uname.equals("kk") && pword.equals("123456")){
+        if (uname.equals("admin") && pword.equals("admin")){
             System.out.println(uname);
             System.out.println(pword);
             closeStage();

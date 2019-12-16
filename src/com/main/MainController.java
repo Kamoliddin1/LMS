@@ -24,7 +24,7 @@ public class MainController {
     private void loadUI(String ui){
         Parent pane = null;
         try {
-            pane = FXMLLoader.load(getClass().getResource(ui + ".fxml"));
+            pane = FXMLLoader.load(getClass().getResource("/login/"+ui + ".fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
