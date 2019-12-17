@@ -22,6 +22,9 @@ public class MainController {
         loadUI("fine");
     }
     private void loadUI(String ui){
+
+
+
         Parent pane = null;
         try {
             pane = FXMLLoader.load(getClass().getResource("/com/login/"+ui + ".fxml"));
