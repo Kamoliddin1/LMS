@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Button?>
+<StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.book.StudentCRUDController">
+    <children>
+        <TableView fx:id="TableStudent">
+            <columns>
+                <TableColumn fx:id="cID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="cUniID" prefWidth="75.0" text="UNI ID" />
+                <TableColumn fx:id="cFirstName" prefWidth="75.0" text="FIRST NAME" />
+                <TableColumn fx:id="cLastName" prefWidth="75.0" text="LAST NAME" />
+                <TableColumn fx:id="cCRUD" prefWidth="75.0" text="CRUD" />
+            </columns>
+        </TableView>
+    </children>
+    <Button mnemonicParsing="false" onAction="#handleStudentCRUDCheckbox" text="Button" />
+</StackPane>
+

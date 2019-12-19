@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<TableView fx:id="TableFine" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.book.FineController">
+   <columns>
+      <TableColumn fx:id="cBook" prefWidth="75.0" text="BOOK" />
+      <TableColumn fx:id="cBorrowedDate" prefWidth="75.0" text="B DATE" />
+      <TableColumn fx:id="cDay" prefWidth="75.0" text="DAY" />
+      <TableColumn fx:id="cFineDay" prefWidth="75.0" text="FINE DAY" />
+      <TableColumn fx:id="cFine" prefWidth="75.0" text="FINE" />
+   </columns>
+</TableView>
