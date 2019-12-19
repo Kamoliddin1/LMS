@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.login.StudentCRUD"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.book.StudentCRUDController">
+    <children>
+        <TableView fx:id="TableStudent">
+            <columns>
+                <TableColumn fx:id="cID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="cUniID" prefWidth="75.0" text="UNI ID" />
+                <TableColumn fx:id="cFirstName" prefWidth="75.0" text="FIRST NAME" />
+                <TableColumn fx:id="cLastName" prefWidth="75.0" text="LAST NAME" />
+                <TableColumn fx:id="cCRUD" prefWidth="75.0" text="CRUD" />
+            </columns>
+        </TableView>
+    </children>
+    <Button layoutX="294.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleStudentDeleteCheckbox" text="Delete" />
+    <Button layoutX="293.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleStudentCreateCheckbox" text="Create" />
+    <Button layoutX="291.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleStudentUpdateCheckbox" text="Update" />
+    <Button layoutX="277.0" layoutY="248.0" mnemonicParsing="false" onAction="#refreshTable" text="Refresh" />
 </AnchorPane>

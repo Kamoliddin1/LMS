@@ -3,20 +3,22 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.StackPane?>
+
 <?import javafx.scene.control.Button?>
-<StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="com.book.StudentCRUDController">
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.book.LibrarianCRUDController">
     <children>
-        <TableView fx:id="TableStudent">
+        <TableView fx:id="TableLibrarian">
             <columns>
-                <TableColumn fx:id="cID" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="cUniID" prefWidth="75.0" text="UNI ID" />
-                <TableColumn fx:id="cFirstName" prefWidth="75.0" text="FIRST NAME" />
-                <TableColumn fx:id="cLastName" prefWidth="75.0" text="LAST NAME" />
-                <TableColumn fx:id="cCRUD" prefWidth="75.0" text="CRUD" />
+                <TableColumn fx:id="cLibID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="cLibUniID" prefWidth="75.0" text="UNI ID" />
+                <TableColumn fx:id="cLibFirstName" prefWidth="75.0" text="FIRST NAME" />
+                <TableColumn fx:id="cLibLastName" prefWidth="75.0" text="LAST NAME" />
+                <TableColumn fx:id="cLibCRUD" prefWidth="75.0" text="CRUD" />
             </columns>
         </TableView>
     </children>
-    <Button mnemonicParsing="false" onAction="#handleStudentCRUDCheckbox" text="Button" />
-</StackPane>
+    <Button layoutX="291.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleLibrarianDeleteCheckbox" text="Delete" />
+    <Button layoutX="293.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleLibrarianCreateCheckbox" text="Create" />
 
+</AnchorPane>

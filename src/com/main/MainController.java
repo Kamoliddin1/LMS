@@ -21,6 +21,19 @@ public class MainController {
     void fine(MouseEvent event) {
         loadUI("fine");
     }
+
+    @FXML
+    void reserve(MouseEvent event) {
+        loadUI("reserve");
+    }
+    @FXML
+    void studentCRUD(MouseEvent event){
+        loadUI("studentCRUD");
+    }
+    @FXML
+    void librarianCRUD(MouseEvent event){
+        loadUI("librarianCRUD");
+    }
     private void loadUI(String ui){
 
 

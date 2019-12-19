@@ -5,4 +5,5 @@ module LMSProject {
 
     opens com.main;
     opens com.login;
+    opens com.book;
 }

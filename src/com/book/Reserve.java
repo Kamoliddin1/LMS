@@ -1,21 +1,44 @@
 package com.book;
 
-public class Fine {
+import javafx.collections.ObservableList;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+
+public class Reserve {
+    private Integer id;
     private String book_title;
     private String borrowed_date;
-    private Integer day;
-    private Integer fine_day;
-    private Double fine;
 
-    public Fine(String book_title, String borrowed_date, Integer day, Integer fine_day, Double fine) {
+    private CheckBox isReserved;
+
+
+    public Reserve(Integer id, String book_title, String borrowed_date, CheckBox isReserved) {
+        this.id = id;
         this.book_title = book_title;
         this.borrowed_date = borrowed_date;
-        this.day = day;
-        this.fine_day = fine_day;
-        this.fine = fine;
+        this.isReserved = isReserved;
     }
 
-    public Fine() {
+
+    public Reserve() {
+    }
+
+    public int getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public CheckBox getIsReserved() {
+        return isReserved;
+    }
+
+    public void setIsReserved(CheckBox isReserved) {
+        this.isReserved = isReserved;
     }
 
     public String getBook_title() {
@@ -32,29 +55,5 @@ public class Fine {
 
     public void setBorrowed_date(String borrowed_date) {
         this.borrowed_date = borrowed_date;
-    }
-
-    public Integer getDay() {
-        return day;
-    }
-
-    public void setDay(Integer day) {
-        this.day = day;
-    }
-
-    public Integer getFine_day() {
-        return fine_day;
-    }
-
-    public void setFine_day(Integer fine_day) {
-        this.fine_day = fine_day;
-    }
-
-    public Double getFine() {
-        return fine;
-    }
-
-    public void setFine(Double fine) {
-        this.fine = fine;
     }
 }

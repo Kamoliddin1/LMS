@@ -4,12 +4,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,53 +23,46 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class LibrarianCRUDController implements Initializable {
-    private static ObservableList<StudentCRUD> studentdata = FXCollections.observableArrayList();
+    private static ObservableList<LibrarianCRUD> librariandata = FXCollections.observableArrayList();
 
     @FXML
-    private TableView<StudentCRUD> TableStudent;
+    private TableView<LibrarianCRUD> TableLibrarian;
 
     @FXML
-    private TableColumn<StudentCRUD, Integer> cID;
+    private TableColumn<LibrarianCRUD, Integer> cLibID;
 
     @FXML
-    private TableColumn<StudentCRUD, String> cUniID;
+    private TableColumn<LibrarianCRUD, String> cLibUniID;
 
     @FXML
-    private TableColumn<StudentCRUD, String> cFirstName;
+    private TableColumn<LibrarianCRUD, String> cLibFirstName;
 
     @FXML
-    private TableColumn<StudentCRUD, String> cLastName;
+    private TableColumn<LibrarianCRUD, String> cLibLastName;
 
     @FXML
-    private TableColumn<StudentCRUD, CheckBox> cCRUD;
+    private TableColumn<LibrarianCRUD, CheckBox> cLibCRUD;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String driver = "org.apache.derby.jdbc.EmbeddedDriver";
         // jdbc Connection
-        Connection conn = null;
         Statement stmt = null;
-        String URL = "jdbc:derby:fdb;create=true;";
-        String USER = "admin";
-        String PASSWORD = "admin";
         try {
-            Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
-            //Get a connection
-            conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            stmt = conn.createStatement();
-            String query = "select * from USERS where role = 1";
+            stmt = com.main.Demo.getConnection().createStatement();
+
+            String query = "select * from USERS where role = 2";
             ResultSet results = stmt.executeQuery(query);
-            studentdata.clear();
+            librariandata.clear();
             while (results.next()){
-                studentdata.add(new StudentCRUD(results.getInt(1),
+                librariandata.add(new LibrarianCRUD(results.getInt(1),
                         results.getString(2),results.getString(3),results.getString(4), new CheckBox()));
             };
-            cID.setCellValueFactory(new PropertyValueFactory<>("id"));
-            cUniID.setCellValueFactory(new PropertyValueFactory<>("university_id"));
-            cFirstName.setCellValueFactory(new PropertyValueFactory<>("first_name"));
-            cLastName.setCellValueFactory(new PropertyValueFactory<>("last_name"));
-            cCRUD.setCellValueFactory(new PropertyValueFactory<>("crud"));
-            TableStudent.setItems(studentdata);
+            cLibID.setCellValueFactory(new PropertyValueFactory<>("id"));
+            cLibUniID.setCellValueFactory(new PropertyValueFactory<>("university_id"));
+            cLibFirstName.setCellValueFactory(new PropertyValueFactory<>("first_name"));
+            cLibLastName.setCellValueFactory(new PropertyValueFactory<>("last_name"));
+            cLibCRUD.setCellValueFactory(new PropertyValueFactory<>("lib_crud"));
+            TableLibrarian.setItems(librariandata);
 
 
 
@@ -74,32 +72,34 @@ public class LibrarianCRUDController implements Initializable {
         }
     }
 
+    public void handleLibrarianCreateCheckbox(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/login/addMemberPopup.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
 
+        stage.setTitle("Add Student");
+        stage.setScene(scene);
+        stage.show();
+    }
 
-    public void handleStudentCRUDCheckbox(ActionEvent event) {
-        ObservableList<StudentCRUD> selectsCRUD = FXCollections.observableArrayList();
-        String driver = "org.apache.derby.jdbc.EmbeddedDriver";
+    public void handleLibrarianDeleteCheckbox(ActionEvent event) {
+        ObservableList<LibrarianCRUD> selectlCRUD = FXCollections.observableArrayList();
+
         // jdbc Connection
-        Connection conn = null;
         Statement stmt = null;
-        String URL = "jdbc:derby:fdb;create=true;";
-        String USER = "admin";
-        String PASSWORD = "admin";
-        for (StudentCRUD sCRUD: studentdata){
-            if(sCRUD.getCrud().isSelected())
+        for (LibrarianCRUD lCRUD: librariandata){
+            if(lCRUD.getLib_crud().isSelected())
             {
-                selectsCRUD.add(sCRUD);
+                selectlCRUD.add(lCRUD);
             }
         }
-        for(StudentCRUD r: selectsCRUD) {
-            int studentid = r.getId();
+        for(LibrarianCRUD r: selectlCRUD) {
+            int librarianid = r.getId();
             try {
-                Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
-                //Get a connection
-                conn = DriverManager.getConnection(URL, USER, PASSWORD);
-                stmt = conn.createStatement();
+                stmt = com.main.Demo.getConnection().createStatement();
+
                 String query = "UPDATE BOOKS SET ADMIN.BOOKS.RESERVED_STATUS = 1 " +
-                        "WHERE ADMIN.BOOKS.ID = " + studentid;
+                        "WHERE ADMIN.BOOKS.ID = " + librarianid;
                 int results = stmt.executeUpdate(query);
                 System.out.println(results);
             } catch (Exception e) {
@@ -107,6 +107,6 @@ public class LibrarianCRUDController implements Initializable {
                 System.out.println("ERROR");
             }
         }
-        studentdata.removeAll(selectsCRUD);
+        librariandata.removeAll(selectlCRUD);
     }
 }

@@ -3,14 +3,12 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 
-<TableView xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<TableView fx:id="TableFine" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.book.FineController">
    <columns>
-      <TableColumn prefWidth="75.0" text="FINE" />
-      <TableColumn prefWidth="75.0" text="FINE" />
-      <TableColumn prefWidth="75.0" text="AUTHOR" />
-      <TableColumn prefWidth="75.0" text="ISBN" />
-      <TableColumn prefWidth="75.0" text="B DATE" />
-      <TableColumn prefWidth="75.0" text="D DATE" />
-      <TableColumn prefWidth="75.0" text="STATUS" />
+      <TableColumn fx:id="cBook" prefWidth="75.0" text="BOOK" />
+      <TableColumn fx:id="cBorrowedDate" prefWidth="75.0" text="B DATE" />
+      <TableColumn fx:id="cDay" prefWidth="75.0" text="DAY" />
+      <TableColumn fx:id="cFineDay" prefWidth="75.0" text="FINE DAY" />
+      <TableColumn fx:id="cFine" prefWidth="75.0" text="FINE" />
    </columns>
 </TableView>

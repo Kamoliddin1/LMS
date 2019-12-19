@@ -8,14 +8,14 @@ public class LibrarianCRUD {
     private String first_name;
     private String last_name;
 
-    private CheckBox crud;
+    private CheckBox lib_crud;
 
-    public LibrarianCRUD(Integer id, String university_id, String first_name, String last_name, CheckBox crud) {
+    public LibrarianCRUD(Integer id, String university_id, String first_name, String last_name, CheckBox lib_crud) {
         this.id = id;
         this.university_id = university_id;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.crud = crud;
+        this.lib_crud = lib_crud;
     }
 
     public LibrarianCRUD() {
@@ -53,11 +53,11 @@ public class LibrarianCRUD {
         this.last_name = last_name;
     }
 
-    public CheckBox getCrud() {
-        return crud;
+    public CheckBox getLib_crud() {
+        return lib_crud;
     }
 
-    public void setCrud(CheckBox crud) {
-        this.crud = crud;
+    public void setLib_crud(CheckBox lib_crud) {
+        this.lib_crud = lib_crud;
     }
 }

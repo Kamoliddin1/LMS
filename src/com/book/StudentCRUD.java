@@ -4,54 +4,60 @@ import javafx.scene.control.CheckBox;
 
 public class StudentCRUD {
     private Integer id;
-    private String book_title;
-    private String borrowed_date;
+    private String university_id;
+    private String first_name;
+    private String last_name;
 
-    private CheckBox isReserved;
+    private CheckBox crud;
 
-
-    public StudentCRUD(Integer id, String book_title, String borrowed_date, CheckBox isReserved) {
+    public StudentCRUD(Integer id, String university_id, String first_name, String last_name, CheckBox crud) {
         this.id = id;
-        this.book_title = book_title;
-        this.borrowed_date = borrowed_date;
-        this.isReserved = isReserved;
+        this.university_id = university_id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.crud = crud;
     }
-
 
     public StudentCRUD() {
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public String getUniversity_id() {
+        return university_id;
     }
 
-    public CheckBox getIsReserved() {
-        return isReserved;
+    public void setUniversity_id(String university_id) {
+        this.university_id = university_id;
     }
 
-    public void setIsReserved(CheckBox isReserved) {
-        this.isReserved = isReserved;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public String getBook_title() {
-        return book_title;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public void setBook_title(String book_title) {
-        this.book_title = book_title;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public String getBorrowed_date() {
-        return borrowed_date;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
-    public void setBorrowed_date(String borrowed_date) {
-        this.borrowed_date = borrowed_date;
+    public CheckBox getCrud() {
+        return crud;
+    }
+
+    public void setCrud(CheckBox crud) {
+        this.crud = crud;
     }
 }
