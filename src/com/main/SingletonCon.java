@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Demo {
+public class SingletonCon {
     static String driver = "org.apache.derby.jdbc.EmbeddedDriver";
     // jdbc Connection
     private static Connection conn = null;
