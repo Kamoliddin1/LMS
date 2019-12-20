@@ -1,5 +1,6 @@
 package com.book;
 
+import com.main.SingletonCon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -42,7 +43,8 @@ public class FineController implements Initializable {
 
         String university_id = "\'u1810197\'";
         try {
-            stmt = com.main.Demo.getConnection().createStatement();
+            stmt = SingletonCon.getConnection().createStatement();
+
             String query = "SELECT b.TITLE,b.BORROWED_DATE,b.DUE_DAY,b.FINE_PER_DAY FROM ADMIN.BOOKS b join users u " +
                     "on b.STUDENT_BORROWED_ID = u.ID where u.UNIVERSITY_ID = " + university_id;
             ResultSet results = stmt.executeQuery(query);

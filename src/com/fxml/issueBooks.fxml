@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.controller.IssueBooksController">
+    <children>
+        <TableView fx:id="TableIssueBook">
+            <columns>
+                <TableColumn fx:id="cIBId" prefWidth="88.0" text="ID" />
+                <TableColumn fx:id="cIBTitle" prefWidth="79.0" text="TITLE" />
+                <TableColumn fx:id="cIBPublish_Date" prefWidth="75.0" text="PUBLISHED" />
+                <TableColumn fx:id="cIBBookIn" prefWidth="75.0" text="LOAN DAY" />
+                <TableColumn fx:id="cIBStudentID" prefWidth="75.0" text="STUDENT ID" />
+            </columns>
+        </TableView>
+    </children>
+    <Button layoutX="300.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleIssueBookSave" text="Save" />
+
+</AnchorPane>

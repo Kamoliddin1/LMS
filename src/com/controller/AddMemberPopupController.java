@@ -49,7 +49,7 @@ public class AddMemberPopupController implements Initializable {
                     "LAST_NAME = \'" + last_name.getText() + "\'," +
                     "FIRST_NAME = \'" + first_name.getText() + "\'," +
                     "PASSWORD = \'" + password.getText() + "\'," +
-                    "role = " + 1 + "where id = " + result.getInt(1);
+                     "where id = " + result.getInt(1);
             int results = stmt.executeUpdate(query);
             cancel();
         } catch (Exception e) {

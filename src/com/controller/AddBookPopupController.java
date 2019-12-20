@@ -3,15 +3,18 @@ package com.book;
 import com.main.SingletonCon;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ResourceBundle;
 
-public class AddBookPopupController {
+public class AddBookPopupController implements Initializable {
     @FXML
     private AnchorPane rootPane;
 
@@ -49,12 +52,13 @@ public class AddBookPopupController {
             String query = "SELECT SESSION.ISUPDATED FROM ADMIN.SESSION order by ID desc";
             ResultSet result = stmt.executeQuery(query);
             result.next();
-//            query = "update ADMIN.USERS set UNIVERSITY_ID =  \'" + university_id.getText() + "\'," +
-//                    "LAST_NAME = \'" + last_name.getText() + "\'," +
-//                    "FIRST_NAME = \'" + first_name.getText() + "\'," +
-//                    "PASSWORD = \'" + password.getText() + "\'," +
-//                    "role = " + 1 + "where id = " + result.getInt(1);
-//            int results = stmt.executeUpdate(query);
+            query = "update ADMIN.BOOKS set TITLE =  \'" + title.getText() + "\'," +
+                    "ISBN = \'" + isbn.getText() + "\'," +
+                    "SUBJECTTITLE = \'" + subject.getText() + "\'," +
+                    "AUTHORNAME = \'" + author.getText() + "\'," +
+                    "PUBLISH_DATE = \'" + publishDate.getText() + "\' " +
+                    "where id = " + result.getInt(1);
+            int results = stmt.executeUpdate(query);
             cancel();
         } catch (Exception e) {
             e.printStackTrace();
@@ -82,4 +86,34 @@ public class AddBookPopupController {
             System.out.println("ERROR");
         }
     }
-}
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // jdbc Connection
+        Statement stmt = null;
+        int curid;
+        try {
+            //Get a connection
+            stmt = SingletonCon.getConnection().createStatement();
+            String query = "SELECT SESSION.ISUPDATED FROM ADMIN.SESSION order by ID desc";
+            ResultSet results = stmt.executeQuery(query);
+
+            if (results.next()) {
+                curid = results.getInt(1);
+                query = "select SUBJECTTITLE,AUTHORNAME,TITLE,ISBN,PUBLISH_DATE from ADMIN.books where id = " + curid;
+                results = stmt.executeQuery(query);
+                results.next();
+                author.setText(results.getString(2));
+                subject.setText(results.getString(1));
+                title.setText(results.getString(3));
+                isbn.setText(results.getString(4));
+                publishDate.setText(results.getString(5));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("ERROR");
+        }
+    }
+    }
+

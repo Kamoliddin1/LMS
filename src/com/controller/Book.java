@@ -25,14 +25,6 @@ public class Book {
         this.bookCheckbox = bookCheckbox;
     }
 
-    public CheckBox getBookCheckbox() {
-        return bookCheckbox;
-    }
-
-    public void setBookCheckbox(CheckBox bookCheckbox) {
-        this.bookCheckbox = bookCheckbox;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -79,5 +71,13 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public CheckBox getBookCheckbox() {
+        return bookCheckbox;
+    }
+
+    public void setBookCheckbox(CheckBox bookCheckbox) {
+        this.bookCheckbox = bookCheckbox;
     }
 }

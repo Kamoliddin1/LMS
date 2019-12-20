@@ -50,7 +50,7 @@ public class BookController implements Initializable {
         try {
             stmt = SingletonCon.getConnection().createStatement();
 
-            String query = "SELECT BOOKS.id, title, isbn, publish_date,AUTHORNAME,SUBJECTTITLE FROM ADMIN.BOOKS";
+            String query = "SELECT BOOKS.ID, TITLE, ISBN, PUBLISH_DATE, AUTHORNAME, SUBJECTTITLE FROM ADMIN.BOOKS";
             ResultSet results = stmt.executeQuery(query);
             bookdata.clear();
             while (results.next()){
@@ -73,7 +73,7 @@ public class BookController implements Initializable {
     }
     @FXML
     void handleBookCreateCheckbox(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/login/addBookPopup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/addBookPopup.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
 
@@ -127,7 +127,7 @@ public class BookController implements Initializable {
                 }
             }
         }
-        Parent root = FXMLLoader.load(getClass().getResource("/com/login/updateBookPopup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/updateBookPopup.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
 

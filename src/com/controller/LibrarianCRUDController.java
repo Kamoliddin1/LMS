@@ -1,5 +1,6 @@
 package com.book;
 
+import com.main.SingletonCon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,8 +17,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -48,7 +47,8 @@ public class LibrarianCRUDController implements Initializable {
         // jdbc Connection
         Statement stmt = null;
         try {
-            stmt = com.main.Demo.getConnection().createStatement();
+            stmt = SingletonCon.getConnection().createStatement();
+
 
             String query = "select * from USERS where role = 2";
             ResultSet results = stmt.executeQuery(query);
@@ -71,13 +71,67 @@ public class LibrarianCRUDController implements Initializable {
             System.out.println("ERROR");
         }
     }
+    public void refreshTable(){
+        // jdbc Connection
+        Statement stmt = null;
+        try {
+            stmt = SingletonCon.getConnection().createStatement();
 
-    public void handleLibrarianCreateCheckbox(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/login/addMemberPopup.fxml"));
+            String query = "select * from USERS where role = 2";
+            ResultSet results = stmt.executeQuery(query);
+            librariandata.clear();
+            while (results.next()){
+                librariandata.add(new LibrarianCRUD(results.getInt(1),
+                        results.getString(2),results.getString(3),results.getString(4), new CheckBox()));
+            };
+            cLibID.setCellValueFactory(new PropertyValueFactory<>("id"));
+            cLibUniID.setCellValueFactory(new PropertyValueFactory<>("university_id"));
+            cLibFirstName.setCellValueFactory(new PropertyValueFactory<>("first_name"));
+            cLibLastName.setCellValueFactory(new PropertyValueFactory<>("last_name"));
+            cLibCRUD.setCellValueFactory(new PropertyValueFactory<>("lib_crud"));
+            TableLibrarian.setItems(librariandata);
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("ERROR");
+        }
+    }
+    public void handleLibrarianUpdateCheckbox(ActionEvent event) throws IOException {
+        ObservableList<LibrarianCRUD> selectlCRUD = FXCollections.observableArrayList();
+
+        // jdbc Connection
+        Statement stmt = null;
+        for (LibrarianCRUD lCRUD: librariandata){
+            if(lCRUD.getLib_crud().isSelected())
+            {
+                try {
+                    //Get a connection
+                    stmt = SingletonCon.getConnection().createStatement();
+                    String query = "update ADMIN.SESSION set ISUPDATED = " + lCRUD.getId();
+                    int results = stmt.executeUpdate(query);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("ERROR");
+                }
+            }
+        }
+
+        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/updateMemberPopup.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
 
-        stage.setTitle("Add Student");
+        stage.setTitle("Update Librarian");
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void handleLibrarianCreateCheckbox(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/addMemberPopup.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.setTitle("Add Librarian");
         stage.setScene(scene);
         stage.show();
     }
@@ -96,10 +150,9 @@ public class LibrarianCRUDController implements Initializable {
         for(LibrarianCRUD r: selectlCRUD) {
             int librarianid = r.getId();
             try {
-                stmt = com.main.Demo.getConnection().createStatement();
+                stmt = SingletonCon.getConnection().createStatement();
 
-                String query = "UPDATE BOOKS SET ADMIN.BOOKS.RESERVED_STATUS = 1 " +
-                        "WHERE ADMIN.BOOKS.ID = " + librarianid;
+                String query = "DELETE FROM ADMIN.USERS WHERE ID = "  + librarianid;
                 int results = stmt.executeUpdate(query);
                 System.out.println(results);
             } catch (Exception e) {

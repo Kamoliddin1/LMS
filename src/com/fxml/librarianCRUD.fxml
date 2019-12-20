@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.book.LibrarianCRUDController">
+    <children>
+        <TableView fx:id="TableLibrarian">
+            <columns>
+                <TableColumn fx:id="cLibID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="cLibUniID" prefWidth="75.0" text="UNI ID" />
+                <TableColumn fx:id="cLibFirstName" prefWidth="75.0" text="FIRST NAME" />
+                <TableColumn fx:id="cLibLastName" prefWidth="75.0" text="LAST NAME" />
+                <TableColumn fx:id="cLibCRUD" prefWidth="75.0" text="CRUD" />
+            </columns>
+        </TableView>
+    </children>
+    <Button layoutX="294.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleLibrarianDeleteCheckbox" text="Delete" />
+    <Button layoutX="293.0" layoutY="307.0" mnemonicParsing="false" onAction="#handleLibrarianCreateCheckbox" text="Create" />
+    <Button layoutX="292.0" layoutY="274.0" mnemonicParsing="false" onAction="#handleLibrarianUpdateCheckbox" text="Update" />
+    <Button layoutX="290.0" layoutY="241.0" mnemonicParsing="false" onAction="#refreshTable" text="Refresh" />
+</AnchorPane>

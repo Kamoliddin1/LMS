@@ -20,7 +20,6 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class StudentCRUDController implements Initializable{
     private static ObservableList<StudentCRUD> studentdata = FXCollections.observableArrayList();
@@ -93,7 +92,7 @@ public class StudentCRUDController implements Initializable{
         }
     }
     public void handleStudentCreateCheckbox(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/login/addMemberPopup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/addMemberPopup.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
 
@@ -145,7 +144,7 @@ public class StudentCRUDController implements Initializable{
                 }
             }
         }
-        Parent root = FXMLLoader.load(getClass().getResource("/com/login/updateMemberPopup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/updateMemberPopup.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
 
