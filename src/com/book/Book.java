@@ -1,28 +1,43 @@
 package com.book;
 
+import javafx.scene.control.CheckBox;
+
 public class Book {
-    private int id;
+    private Integer id;
     private String title;
     private String isbn;
-    private String author;
+    private String subject;
     private String publishDate;
+    private String author;
+
+    private CheckBox bookCheckbox;
 
     Book() {
     }
 
-    public Book(int id, String title, String isbn, String author, String publishDate) {
+    public Book(Integer id, String title, String isbn, String subject, String publishDate, String author, CheckBox bookCheckbox) {
         this.id = id;
         this.title = title;
         this.isbn = isbn;
-        this.author = author;
+        this.subject = subject;
         this.publishDate = publishDate;
+        this.author = author;
+        this.bookCheckbox = bookCheckbox;
     }
 
-    public int getId() {
+    public CheckBox getBookCheckbox() {
+        return bookCheckbox;
+    }
+
+    public void setBookCheckbox(CheckBox bookCheckbox) {
+        this.bookCheckbox = bookCheckbox;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -42,12 +57,12 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getPublishDate() {
@@ -56,5 +71,13 @@ public class Book {
 
     public void setPublishDate(String publishDate) {
         this.publishDate = publishDate;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }
