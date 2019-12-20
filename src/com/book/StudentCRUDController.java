@@ -1,5 +1,6 @@
 package com.book;
 
+import com.main.SingletonCon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -40,14 +41,14 @@ public class StudentCRUDController implements Initializable{
 
     @FXML
     private TableColumn<StudentCRUD, CheckBox> cCRUD;
-
+    private Timer timer;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // jdbc Connection
         Statement stmt = null;
         try {
             //Get a connection
-            stmt = com.main.Demo.getConnection().createStatement();
+            stmt = SingletonCon.getConnection().createStatement();
             String query = "select * from USERS where role = 1";
             ResultSet results = stmt.executeQuery(query);
             studentdata.clear();
@@ -67,11 +68,11 @@ public class StudentCRUDController implements Initializable{
             System.out.println("ERROR");
         }
     }
-    public void refreshTable(ActionEvent event){
+    public void refreshTable(){
         Statement stmt = null;
         try {
             //Get a connection
-            stmt = com.main.Demo.getConnection().createStatement();
+            stmt = SingletonCon.getConnection().createStatement();
             String query = "select * from USERS where role = 1";
             ResultSet results = stmt.executeQuery(query);
             studentdata.clear();
@@ -114,7 +115,7 @@ public class StudentCRUDController implements Initializable{
             int userid = r.getId();
             try {
                 //Get a connection
-                stmt = com.main.Demo.getConnection().createStatement();
+                stmt = SingletonCon.getConnection().createStatement();
                 String query = "DELETE FROM ADMIN.USERS WHERE ID = " + userid;
                 int results = stmt.executeUpdate(query);
             } catch (Exception e) {
@@ -123,9 +124,33 @@ public class StudentCRUDController implements Initializable{
             }
         }
         studentdata.removeAll(selectsCRUD);
-    }
-    public void handleStudentUpdateCheckbox(ActionEvent event) {
 
     }
+    public void handleStudentUpdateCheckbox(ActionEvent event) throws IOException {
 
+        ObservableList<StudentCRUD> selectsCRUD = FXCollections.observableArrayList();
+        // jdbc Connection
+        Statement stmt = null;
+        for (StudentCRUD sCRUD: studentdata){
+            if(sCRUD.getCrud().isSelected())
+            {
+                try {
+                    //Get a connection
+                    stmt = SingletonCon.getConnection().createStatement();
+                    String query = "update ADMIN.SESSION set ISUPDATED = " + sCRUD.getId();
+                    int results = stmt.executeUpdate(query);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("ERROR");
+                }
+            }
+        }
+        Parent root = FXMLLoader.load(getClass().getResource("/com/login/updateMemberPopup.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.setTitle("Update Student");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
