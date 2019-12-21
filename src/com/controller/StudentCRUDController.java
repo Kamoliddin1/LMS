@@ -1,4 +1,4 @@
-package com.book;
+package com.controller;
 
 import com.main.SingletonCon;
 import javafx.collections.FXCollections;
@@ -91,6 +91,36 @@ public class StudentCRUDController implements Initializable{
             System.out.println("ERROR");
         }
     }
+
+
+    public void handleStudentUpdateCheckbox(ActionEvent event) throws IOException {
+
+        ObservableList<StudentCRUD> selectsCRUD = FXCollections.observableArrayList();
+        // jdbc Connection
+        Statement stmt = null;
+        for (StudentCRUD sCRUD: studentdata){
+            if(sCRUD.getCrud().isSelected())
+            {
+                try {
+                    //Get a connection
+                    stmt = SingletonCon.getConnection().createStatement();
+                    String query = "update ADMIN.SESSION set ISUPDATED = " + sCRUD.getId();
+                    int results = stmt.executeUpdate(query);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("ERROR");
+                }
+            }
+        }
+        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/updateMemberPopup.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.setTitle("Update Student");
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void handleStudentCreateCheckbox(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/addMemberPopup.fxml"));
         Scene scene = new Scene(root);
@@ -124,32 +154,5 @@ public class StudentCRUDController implements Initializable{
         }
         studentdata.removeAll(selectsCRUD);
 
-    }
-    public void handleStudentUpdateCheckbox(ActionEvent event) throws IOException {
-
-        ObservableList<StudentCRUD> selectsCRUD = FXCollections.observableArrayList();
-        // jdbc Connection
-        Statement stmt = null;
-        for (StudentCRUD sCRUD: studentdata){
-            if(sCRUD.getCrud().isSelected())
-            {
-                try {
-                    //Get a connection
-                    stmt = SingletonCon.getConnection().createStatement();
-                    String query = "update ADMIN.SESSION set ISUPDATED = " + sCRUD.getId();
-                    int results = stmt.executeUpdate(query);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    System.out.println("ERROR");
-                }
-            }
-        }
-        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/updateMemberPopup.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-
-        stage.setTitle("Update Student");
-        stage.setScene(scene);
-        stage.show();
     }
 }

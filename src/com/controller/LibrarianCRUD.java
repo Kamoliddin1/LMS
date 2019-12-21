@@ -1,4 +1,4 @@
-package com.book;
+package com.controller;
 
 import javafx.scene.control.CheckBox;
 

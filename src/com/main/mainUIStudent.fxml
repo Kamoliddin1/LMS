@@ -37,7 +37,8 @@
                               <Image url="@../static/user.png" />
                            </image>
                         </ImageView>
-                        <Label text="Name  ID" />
+                        <Label fx:id="first_name" text="Name" />
+                        <Label fx:id="last_name" text="Last Name" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -69,12 +70,7 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#studentCRUD" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Student">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#librarianCRUD" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Librarian">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Logout">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

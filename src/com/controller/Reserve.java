@@ -1,7 +1,5 @@
-package com.book;
+package com.controller;
 
-import javafx.collections.ObservableList;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 
 public class Reserve {

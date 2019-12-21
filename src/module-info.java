@@ -4,6 +4,6 @@ module LMSProject {
     requires java.sql;
 
     opens com.main;
-    opens com.login;
-    opens com.book;
+    opens com.fxml;
+    opens com.controller;
 }

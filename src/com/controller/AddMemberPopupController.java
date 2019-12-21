@@ -1,4 +1,4 @@
-package com.book;
+package com.controller;
 import com.main.SingletonCon;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,7 +48,7 @@ public class AddMemberPopupController implements Initializable {
             query = "update ADMIN.USERS set UNIVERSITY_ID =  \'" + university_id.getText() + "\'," +
                     "LAST_NAME = \'" + last_name.getText() + "\'," +
                     "FIRST_NAME = \'" + first_name.getText() + "\'," +
-                    "PASSWORD = \'" + password.getText() + "\'," +
+                    "PASSWORD = \'" + password.getText() + "\' " +
                      "where id = " + result.getInt(1);
             int results = stmt.executeUpdate(query);
             cancel();
@@ -58,6 +58,29 @@ public class AddMemberPopupController implements Initializable {
         }
 
     }
+    @FXML
+    void addLibMember(){
+
+        // jdbc Connection
+        Statement stmt = null;
+        try {
+            //Get a connection
+            stmt = SingletonCon.getConnection().createStatement();
+            String query = "insert into ADMIN.users(university_id, first_name, last_name, password, role)\n" +
+                    "values(" +
+                    "\'" + university_id.getText() + "\'," +
+                    "\'" + first_name.getText() + "\'," +
+                    "\'" + last_name.getText() + "\'," +
+                    "\'" + password.getText() + "\'," + 2 + ")";
+            int results = stmt.executeUpdate(query);
+            cancel();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("ERROR");
+        }
+
+    }
+
     @FXML
     void addMember(ActionEvent event) {
 

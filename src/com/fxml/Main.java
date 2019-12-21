@@ -1,4 +1,4 @@
-package com.login;
+package com.fxml;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

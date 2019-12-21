@@ -1,4 +1,4 @@
-package com.book;
+package com.controller;
 
 public class Fine {
     private String book_title;

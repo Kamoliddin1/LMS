@@ -1,4 +1,4 @@
-package com.book;
+package com.controller;
 
 import com.main.SingletonCon;
 import javafx.event.ActionEvent;

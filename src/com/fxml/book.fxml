@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <?import javafx.scene.control.Button?>
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.book.BookController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.BookController">
     <children>
         <TableView fx:id="TableBook">
             <columns>

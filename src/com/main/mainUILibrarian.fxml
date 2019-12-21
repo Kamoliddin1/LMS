@@ -32,12 +32,8 @@
                <children>
                   <HBox>
                      <children>
-                        <ImageView fitHeight="45.0" fitWidth="50.0">
-                           <image>
-                              <Image url="@../static/user.png" />
-                           </image>
-                        </ImageView>
-                        <Label text="Name  ID" />
+                        <Label fx:id="first_name" text="Name" />
+                        <Label fx:id="last_name" text="Last Name" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -51,30 +47,22 @@
                         <Insets bottom="5.0" top="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#fine" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Fine">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <VBox.margin>
-                        <Insets bottom="5.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#fine" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Personal Details">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#reserve" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Reserve">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#studentCRUD" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Student">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#librarianCRUD" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Librarian">
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#borrowedBooks" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Borrowed Books">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#issueBooks" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Issue Book">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Logout">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

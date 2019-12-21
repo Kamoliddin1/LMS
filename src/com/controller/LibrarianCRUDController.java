@@ -1,4 +1,4 @@
-package com.book;
+package com.controller;
 
 import com.main.SingletonCon;
 import javafx.collections.FXCollections;
@@ -127,7 +127,7 @@ public class LibrarianCRUDController implements Initializable {
         stage.show();
     }
     public void handleLibrarianCreateCheckbox(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/addMemberPopup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/addLibrarianPopup.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
 
