@@ -60,11 +60,11 @@ CREATE TABLE SESSION(
     idBook int default 1
 );
 INSERT INTO SESSION(user_id) values (1);
-INSERT INTO BOOKS (TITLE, ISBN, PUBLISH_DATE,authorname,subjecttitle)
-VALUES ('Data Structure', '139780470383278', '2009','deitel and deitel','linear algebra'),
-       ('discreta math', '546464646464646', '2006','Rosetta Stone','Java application'),
-       ('linear algebra', '646468468454', '2016','James Bond','Discrete math'),
-       ('life', '544649498498', '2019','Kulibali Kiosota','English');
+INSERT INTO BOOKS (TITLE, ISBN, PUBLISH_DATE,authorname,subjecttitle,FINE_PER_DAY)
+VALUES ('Data Structure', '139780470383278', '2009','deitel and deitel','linear algebra',5000),
+       ('discreta math', '546464646464646', '2006','Rosetta Stone','Java application',300),
+       ('linear algebra', '646468468454', '2016','James Bond','Discrete math',2000),
+       ('life', '544649498498', '2019','Kulibali Kiosota','English',10000);
 insert into AUTHORS (NAME)
 values ('kenndy alxim'),
        ('kamol niyoziy'),

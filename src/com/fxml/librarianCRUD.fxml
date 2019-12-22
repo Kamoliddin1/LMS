@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.LibrarianCRUDController">
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<AnchorPane prefHeight="385.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.LibrarianCRUDController">
     <children>
-        <TableView fx:id="TableLibrarian">
+        <TableView fx:id="TableLibrarian" prefHeight="385.0" prefWidth="526.0">
             <columns>
-                <TableColumn fx:id="cLibID" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="cLibUniID" prefWidth="75.0" text="UNI ID" />
-                <TableColumn fx:id="cLibFirstName" prefWidth="75.0" text="FIRST NAME" />
-                <TableColumn fx:id="cLibLastName" prefWidth="75.0" text="LAST NAME" />
-                <TableColumn fx:id="cLibCRUD" prefWidth="75.0" text="CRUD" />
+                <TableColumn fx:id="cLibID" prefWidth="70.0" text="ID" />
+                <TableColumn fx:id="cLibUniID" prefWidth="95.0" text="UNI ID" />
+                <TableColumn fx:id="cLibFirstName" prefWidth="110.0" text="FIRST NAME" />
+                <TableColumn fx:id="cLibLastName" prefWidth="110.0" text="LAST NAME" />
+                <TableColumn fx:id="cLibCRUD" prefWidth="100.0" text="CRUD" />
             </columns>
         </TableView>
     </children>
-    <Button layoutX="294.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleLibrarianDeleteCheckbox" text="Delete" />
-    <Button layoutX="293.0" layoutY="307.0" mnemonicParsing="false" onAction="#handleLibrarianCreateCheckbox" text="Create" />
-    <Button layoutX="292.0" layoutY="274.0" mnemonicParsing="false" onAction="#handleLibrarianUpdateCheckbox" text="Update" />
-    <Button layoutX="290.0" layoutY="241.0" mnemonicParsing="false" onAction="#refreshTable" text="Refresh" />
+    <Button layoutX="455.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleLibrarianDeleteCheckbox" text="Delete" />
+    <Button layoutX="454.0" layoutY="312.0" mnemonicParsing="false" onAction="#handleLibrarianCreateCheckbox" text="Create" />
+    <Button layoutX="453.0" layoutY="279.0" mnemonicParsing="false" onAction="#handleLibrarianUpdateCheckbox" text="Update" />
+    <Button layoutX="451.0" layoutY="246.0" mnemonicParsing="false" onAction="#refreshTable" text="Refresh" />
 </AnchorPane>

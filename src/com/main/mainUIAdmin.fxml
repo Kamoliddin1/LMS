@@ -21,22 +21,52 @@
                         <Image url="@../static/logo.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="70.0" prefWidth="258.0" style="-fx-text-fill: #fff;" text="LIBRARY MANAGEMENT SYSTEM" textFill="WHITE" />
+                  <Label prefHeight="70.0" prefWidth="159.0" style="-fx-text-fill: #fff;" text="LIBRARY MANAGEMENT SYSTEM" textFill="WHITE" wrapText="true">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Label>
                </children>
             </HBox>
          </bottom>
          <left>
-            <VBox alignment="TOP_CENTER" prefHeight="290.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+            <VBox alignment="TOP_CENTER" prefHeight="385.0" prefWidth="174.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="174.0">
                      <children>
-                        <ImageView fitHeight="45.0" fitWidth="50.0">
+                        <ImageView fitHeight="34.0" fitWidth="36.0">
                            <image>
                               <Image url="@../static/user.png" />
                            </image>
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
                         </ImageView>
-                        <Label fx:id="first_name" text="Name" />
-                        <Label fx:id="last_name" text="Last Name" />
+                        <VBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="124.0">
+                           <children>
+                              <Label fx:id="first_name" alignment="TOP_LEFT" prefHeight="16.0" prefWidth="101.0" text="Name">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="last_name" alignment="TOP_LEFT" prefHeight="16.0" prefWidth="101.0" text="Last Name">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </VBox>
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -47,23 +77,32 @@
                         <Insets />
                      </opaqueInsets>
                      <VBox.margin>
-                        <Insets bottom="5.0" top="20.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="35.0" />
                      </VBox.margin>
                   </Button>
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#studentCRUD" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Student">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
                   </Button>
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#librarianCRUD" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Librarian">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
                   </Button>
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #705964;" text="Logout">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
                   </Button>
                </children>
             </VBox>

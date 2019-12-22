@@ -72,14 +72,16 @@ public class IssueBooksController implements Initializable {
         for (IssueBooks bookissue: issuebookdata){
             universityid = bookissue.getStudentID().getText().trim();
             loanday = bookissue.getIssueBookTxt().getText().trim();
-                query = "SELECT ID FROM USERS WHERE UNIVERSITY_ID = " + "\'" +universityid +"\'";
+            System.out.println("id:"+universityid);
+            System.out.println("DAY:"+loanday);
+                query = "SELECT ID FROM ADMIN.USERS WHERE UNIVERSITY_ID = " + "\'" +universityid +"\'";
                 ResultSet resultSet = stmt.executeQuery(query);
                 if(loanday != "0" && (resultSet.next())) {
                     id = resultSet.getInt(1);
                     query = "UPDATE ADMIN.BOOKS set DUE_DAY = " + loanday +
                             ", BORROWED_STATUS = 1," +
                             " STUDENT_BORROWED_ID = " + id;
-                    int resuls = stmt.executeUpdate(query);
+                    int results = stmt.executeUpdate(query);
                     selectIssueBook.add(bookissue);
                 }
         }

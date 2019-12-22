@@ -4,16 +4,16 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.BorrowedBooksController">
+<AnchorPane prefHeight="385.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.BorrowedBooksController">
     <children>
-        <TableView fx:id="TableBBook">
+        <TableView fx:id="TableBBook" prefHeight="385.0" prefWidth="526.0">
             <columns>
-                <TableColumn fx:id="cBId" prefWidth="88.0" text="ID" />
-                <TableColumn fx:id="cBTitle" prefWidth="79.0" text="TITLE" />
-                <TableColumn fx:id="cBSubject" prefWidth="85.0" text="SUBJECT" />
-                <TableColumn fx:id="cBAuthor" prefWidth="72.0" text="AUTHOR" />
-                <TableColumn fx:id="cBISBN" prefWidth="63.0" text="ISBN" />
-                <TableColumn fx:id="cBPublish_Date" prefWidth="76.0" text="PUBLISHED" />
+                <TableColumn fx:id="cBId" prefWidth="57.0" text="ID" />
+                <TableColumn fx:id="cBTitle" prefWidth="94.0" text="TITLE" />
+                <TableColumn fx:id="cBSubject" prefWidth="95.0" text="SUBJECT" />
+                <TableColumn fx:id="cBAuthor" prefWidth="78.0" text="AUTHOR" />
+                <TableColumn fx:id="cBISBN" prefWidth="73.0" text="ISBN" />
+                <TableColumn fx:id="cBPublish_Date" prefWidth="116.0" text="PUBLISHED" />
             </columns>
         </TableView>
     </children>

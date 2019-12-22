@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.controller.IssueBooksController">
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<AnchorPane prefHeight="385.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.IssueBooksController">
     <children>
-        <TableView fx:id="TableIssueBook">
+        <TableView fx:id="TableIssueBook" prefHeight="385.0" prefWidth="526.0">
             <columns>
-                <TableColumn fx:id="cIBId" prefWidth="88.0" text="ID" />
-                <TableColumn fx:id="cIBTitle" prefWidth="79.0" text="TITLE" />
-                <TableColumn fx:id="cIBPublish_Date" prefWidth="75.0" text="PUBLISHED" />
-                <TableColumn fx:id="cIBBookIn" prefWidth="75.0" text="LOAN DAY" />
-                <TableColumn fx:id="cIBStudentID" prefWidth="75.0" text="STUDENT ID" />
+                <TableColumn fx:id="cIBId" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="cIBTitle" prefWidth="100.0" text="TITLE" />
+                <TableColumn fx:id="cIBPublish_Date" prefWidth="100.0" text="PUBLISHED" />
+                <TableColumn fx:id="cIBBookIn" prefWidth="100.0" text="LOAN DAY" />
+                <TableColumn fx:id="cIBStudentID" prefWidth="120.0" text="STUDENT ID" />
             </columns>
         </TableView>
     </children>
-    <Button layoutX="300.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleIssueBookSave" text="Save" />
+    <Button layoutX="456.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleIssueBookSave" text="Save" />
 
 </AnchorPane>

@@ -39,16 +39,20 @@ public class FineController implements Initializable {
 
         Statement stmt = null;
 
-        String university_id = "\'u1810197\'";
+//        String university_id = "\'u1810197\'";
         try {
             stmt = SingletonCon.getConnection().createStatement();
-
-            String query = "SELECT b.TITLE,b.BORROWED_DATE,b.DUE_DAY,b.FINE_PER_DAY FROM ADMIN.BOOKS b join users u " +
-                    "on b.STUDENT_BORROWED_ID = u.ID where u.UNIVERSITY_ID = " + university_id;
-            ResultSet results = stmt.executeQuery(query);
-            while (results.next()){
-                finedata.add(new Fine(results.getString(1), results.getString(2),results.getInt(3),
-                        results.getInt(3),results.getDouble(4)));
+            int userid = 1;
+            String query = "SELECT USER_ID FROM ADMIN.SESSION";
+            ResultSet resultSet = stmt.executeQuery(query);
+            if(resultSet.next()) {
+                userid = resultSet.getInt(1);
+            }
+            query = "SELECT TITLE, BORROWED_DATE, DUE_DAY, FINE_PER_DAY FROM ADMIN.BOOKS where ID = " +userid;
+            resultSet = stmt.executeQuery(query);
+            while (resultSet.next()){
+                finedata.add(new Fine(resultSet.getString(1), resultSet.getString(2),resultSet.getInt(3),
+                        resultSet.getInt(3),resultSet.getDouble(4)));
             };
             cBook.setCellValueFactory(new PropertyValueFactory<>("book_title"));
             cBorrowedDate.setCellValueFactory(new PropertyValueFactory<>("borrowed_date"));
