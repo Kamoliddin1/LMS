@@ -7,6 +7,7 @@ public class Fine {
     private Integer fine_day;
     private Double fine;
 
+//  Initialized Constructor
     public Fine(String book_title, String borrowed_date, Integer day, Integer fine_day, Double fine) {
         this.book_title = book_title;
         this.borrowed_date = borrowed_date;
@@ -17,7 +18,7 @@ public class Fine {
 
     public Fine() {
     }
-
+//  simple Getters and Setters
     public String getBook_title() {
         return book_title;
     }

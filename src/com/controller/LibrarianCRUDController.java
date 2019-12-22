@@ -42,6 +42,7 @@ public class LibrarianCRUDController implements Initializable {
     @FXML
     private TableColumn<LibrarianCRUD, CheckBox> cLibCRUD;
 
+//    init
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // jdbc Connection
@@ -71,6 +72,7 @@ public class LibrarianCRUDController implements Initializable {
             System.out.println("ERROR");
         }
     }
+//    refresh by reinitializing
     public void refreshTable(){
         // jdbc Connection
         Statement stmt = null;
@@ -98,6 +100,7 @@ public class LibrarianCRUDController implements Initializable {
             System.out.println("ERROR");
         }
     }
+    // Update Librarian
     public void handleLibrarianUpdateCheckbox(ActionEvent event) throws IOException {
         ObservableList<LibrarianCRUD> selectlCRUD = FXCollections.observableArrayList();
 
@@ -126,6 +129,7 @@ public class LibrarianCRUDController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+//    Create Librarian by calling addLibrarianPopup.fxml
     public void handleLibrarianCreateCheckbox(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/addLibrarianPopup.fxml"));
         Scene scene = new Scene(root);
@@ -135,7 +139,7 @@ public class LibrarianCRUDController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+//  Delete Librarian
     public void handleLibrarianDeleteCheckbox(ActionEvent event) {
         ObservableList<LibrarianCRUD> selectlCRUD = FXCollections.observableArrayList();
 

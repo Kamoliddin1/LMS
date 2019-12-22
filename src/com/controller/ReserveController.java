@@ -33,6 +33,7 @@ public class ReserveController implements Initializable {
     @FXML
     private TableColumn<Reserve, CheckBox> cReserve;
 
+//    init
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Statement stmt = null;
@@ -59,6 +60,8 @@ public class ReserveController implements Initializable {
         }
     }
 
+
+//    Reserve books by updating a column RESERVED_STATUS = 1
     public void handleSelectedCheckbox(ActionEvent event) {
         ObservableList<Reserve> selectAsReserved = FXCollections.observableArrayList();
         Statement stmt = null;

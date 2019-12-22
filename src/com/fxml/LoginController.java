@@ -23,6 +23,7 @@ public class LoginController {
     @FXML
     void handleLoginAction(ActionEvent event){}
     @FXML
+//    Login button event
     void handleLoginBtnClicked(MouseEvent event) {
         Statement stmt = null;
 
@@ -51,10 +52,13 @@ public class LoginController {
             System.out.println("ERROR");
         }
     }
+//    closing Stage
     private void closeStage() {
         ((Stage) username.getScene().getWindow()).close();
     }
+//    Choose window according users role
     private void openMain(int role) {
+//        Student
         if(role==1) {
             try {
                 Parent parent = FXMLLoader.load(getClass().getResource("/com/main/mainUIStudent.fxml"));
@@ -65,6 +69,7 @@ public class LoginController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+//            Library
         } else if (role==2) {
             try {
                 Parent parent = FXMLLoader.load(getClass().getResource("/com/main/mainUILibrarian.fxml"));
@@ -75,6 +80,7 @@ public class LoginController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+//            Admin
         } else if(role==3) {
             try {
                 Parent parent = FXMLLoader.load(getClass().getResource("/com/main/mainUIAdmin.fxml"));

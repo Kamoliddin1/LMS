@@ -36,6 +36,7 @@ public class AddMemberPopupController implements Initializable {
     private Button cancelButton;
 
     @FXML
+//   Update member updateMemberPopup.fxml's controller
     void updateMember(){
         // jdbc Connection
         Statement stmt = null;
@@ -59,6 +60,7 @@ public class AddMemberPopupController implements Initializable {
 
     }
     @FXML
+//    Add librarian addLibrarianPopup.fxml's controller
     void addLibMember(){
 
         // jdbc Connection
@@ -82,6 +84,7 @@ public class AddMemberPopupController implements Initializable {
     }
 
     @FXML
+//    Add Student
     void addMember(ActionEvent event) {
 
         // jdbc Connection
@@ -102,7 +105,7 @@ public class AddMemberPopupController implements Initializable {
             System.out.println("ERROR");
         }
     }
-
+//  cancel button
     @FXML
     void cancel() {
         Stage stage = (Stage) rootPane.getScene().getWindow();

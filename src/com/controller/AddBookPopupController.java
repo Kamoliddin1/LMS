@@ -38,11 +38,13 @@ public class AddBookPopupController implements Initializable {
     private Button cancelButton;
 
     @FXML
+//    Cancel
     void cancel() {
         Stage stage = (Stage) rootPane.getScene().getWindow();
         stage.close();
     }
     @FXML
+//    Get book's id and update it, updateBookPopup.fxml's controller
     void updateBook(){
         // jdbc Connection
         Statement stmt = null;
@@ -66,6 +68,7 @@ public class AddBookPopupController implements Initializable {
         }
     }
     @FXML
+//    Adding books addBookPopup.fxml's controller
     void addBook(ActionEvent event) {
         // jdbc Connection
         Statement stmt = null;
@@ -88,6 +91,7 @@ public class AddBookPopupController implements Initializable {
     }
 
     @Override
+//    Retrieve Books to popup
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         // jdbc Connection

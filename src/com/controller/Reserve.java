@@ -9,6 +9,7 @@ public class Reserve {
 
     private CheckBox isReserved;
 
+//  initialized Constructor
 
     public Reserve(Integer id, String book_title, String borrowed_date, CheckBox isReserved) {
         this.id = id;
@@ -20,6 +21,7 @@ public class Reserve {
 
     public Reserve() {
     }
+//  Simple Getters and Setters
 
     public int getId() {
         return id;
@@ -30,7 +32,7 @@ public class Reserve {
     public void setId(int id) {
         this.id = id;
     }
-
+    //  Checkbox for Reserving Book
     public CheckBox getIsReserved() {
         return isReserved;
     }

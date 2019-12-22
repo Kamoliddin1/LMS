@@ -7,9 +7,10 @@ public class LibrarianCRUD {
     private String university_id;
     private String first_name;
     private String last_name;
-
+    //  Checkbox for CRUD Librarian
     private CheckBox lib_crud;
 
+    //  Initialized Constructor
     public LibrarianCRUD(Integer id, String university_id, String first_name, String last_name, CheckBox lib_crud) {
         this.id = id;
         this.university_id = university_id;
@@ -20,6 +21,7 @@ public class LibrarianCRUD {
 
     public LibrarianCRUD() {
     }
+//  simple Getters and Setters
 
     public Integer getId() {
         return id;

@@ -32,7 +32,7 @@ public class IssueBooksController implements Initializable {
     private TableColumn<IssueBooks, TextField> cIBBookIn;
     @FXML
     private TableColumn<IssueBooks, TextField> cIBStudentID;
-
+//    init
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Statement stmt = null;

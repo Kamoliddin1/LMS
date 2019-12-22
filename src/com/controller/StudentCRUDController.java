@@ -42,6 +42,8 @@ public class StudentCRUDController implements Initializable{
     private TableColumn<StudentCRUD, CheckBox> cCRUD;
     private Timer timer;
     @Override
+
+    //    init
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // jdbc Connection
         Statement stmt = null;
@@ -67,6 +69,8 @@ public class StudentCRUDController implements Initializable{
             System.out.println("ERROR");
         }
     }
+
+    //    refresh by reinitializing
     public void refreshTable(){
         Statement stmt = null;
         try {
@@ -92,7 +96,7 @@ public class StudentCRUDController implements Initializable{
         }
     }
 
-
+// Update Student
     public void handleStudentUpdateCheckbox(ActionEvent event) throws IOException {
 
         ObservableList<StudentCRUD> selectsCRUD = FXCollections.observableArrayList();
@@ -121,6 +125,7 @@ public class StudentCRUDController implements Initializable{
         stage.show();
     }
 
+    // Create Student by calling a addMemberPopup.fxml
     public void handleStudentCreateCheckbox(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/addMemberPopup.fxml"));
         Scene scene = new Scene(root);
@@ -130,6 +135,7 @@ public class StudentCRUDController implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
+//    Delete Student
     public void handleStudentDeleteCheckbox(ActionEvent event) {
         ObservableList<StudentCRUD> selectsCRUD = FXCollections.observableArrayList();
         // jdbc Connection

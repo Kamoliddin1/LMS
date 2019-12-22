@@ -12,6 +12,7 @@ public class IssueBooks {
 
     public IssueBooks() {
     }
+//  Initialized Constructor
 
     public IssueBooks(Integer id, String title, String publishDate, TextField issueBookTxt, TextField studentID) {
         this.id = id;
@@ -20,6 +21,7 @@ public class IssueBooks {
         IssueBookTxt = issueBookTxt;
         StudentID = studentID;
     }
+//  simple Getters and Setters
 
     public Integer getId() {
         return id;

@@ -8,8 +8,10 @@ public class StudentCRUD {
     private String first_name;
     private String last_name;
 
+    //  Checkbox for CRUD Student
     private CheckBox crud;
 
+    //  Initialized Constructor
     public StudentCRUD(Integer id, String university_id, String first_name, String last_name, CheckBox crud) {
         this.id = id;
         this.university_id = university_id;
@@ -20,6 +22,7 @@ public class StudentCRUD {
 
     public StudentCRUD() {
     }
+//  simple Getters and Setters
 
     public Integer getId() {
         return id;

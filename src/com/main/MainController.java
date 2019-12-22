@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
@@ -28,6 +27,7 @@ public class MainController implements Initializable {
 
     @FXML
     private BorderPane borderPane;
+//    Panes
     @FXML
     void book(MouseEvent event) {
         loadUI("book");
@@ -54,6 +54,7 @@ public class MainController implements Initializable {
     void librarianCRUD(MouseEvent event){
         loadUI("librarianCRUD");
     }
+//    Changing panes UI loader
     private void loadUI(String ui){
 
         Parent pane = null;
@@ -64,6 +65,7 @@ public class MainController implements Initializable {
         }
         borderPane.setCenter(pane);
     }
+    //    logout
     @FXML
     void logout(MouseEvent event) {
         Statement stmt = null;
@@ -86,7 +88,7 @@ public class MainController implements Initializable {
         }
     }
 
-
+    // User Session
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Statement stmt = null;

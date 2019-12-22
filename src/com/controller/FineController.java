@@ -35,11 +35,11 @@ public class FineController implements Initializable {
     private TableColumn<Fine, Double> cFine;
 
     @Override
+    //    init
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         Statement stmt = null;
-
-//        String university_id = "\'u1810197\'";
+//      Get the user by session and show user's fine
         try {
             stmt = SingletonCon.getConnection().createStatement();
             int userid = 1;

@@ -14,7 +14,7 @@ public class Book {
 
     Book() {
     }
-
+//  initialized Constructor
     public Book(Integer id, String title, String isbn, String subject, String publishDate, String author, CheckBox bookCheckbox) {
         this.id = id;
         this.title = title;
@@ -24,7 +24,7 @@ public class Book {
         this.author = author;
         this.bookCheckbox = bookCheckbox;
     }
-
+//  Simple Getters and Setters
     public Integer getId() {
         return id;
     }
@@ -72,7 +72,7 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
-
+//  Checkbox for CRUD Book
     public CheckBox getBookCheckbox() {
         return bookCheckbox;
     }

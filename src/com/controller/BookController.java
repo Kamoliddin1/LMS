@@ -42,7 +42,7 @@ public class BookController implements Initializable {
     private TableColumn<Book, String> cSubject;
     @FXML
     private TableColumn<Book, CheckBox> cBookCRUD;
-
+//init
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Statement stmt = null;
@@ -71,6 +71,7 @@ public class BookController implements Initializable {
         }
 
     }
+//    Calling popup
     @FXML
     void handleBookCreateCheckbox(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/fxml/addBookPopup.fxml"));
@@ -81,7 +82,7 @@ public class BookController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+//  Delete a book
     @FXML
     void handleBookDeleteCheckbox(ActionEvent event) {
         ObservableList<Book> selectBookCRUD = FXCollections.observableArrayList();
@@ -107,7 +108,7 @@ public class BookController implements Initializable {
         }
         bookdata.removeAll(selectBookCRUD);
     }
-
+//  Update a book
     @FXML
     void handleBookUpdateCheckbox(ActionEvent event) throws IOException {
         ObservableList<Book> selectBookCRUD = FXCollections.observableArrayList();
@@ -135,6 +136,7 @@ public class BookController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+//    Refresh ( just copied init )
     public void refreshTable(){
         Statement stmt = null;
 
